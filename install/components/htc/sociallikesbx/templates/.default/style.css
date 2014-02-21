@@ -1,0 +1,49 @@
+.soc-buttons-cont {
+    float: right;
+}
+.soc-buttons-cont, .soc-vote-title, .soc-button, .bx_auth_services {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.bx_auth_services {
+    margin-left: 0;
+}
+.bx-spacer, .bx-spacer + span {
+    display: none;
+}
+.soc-vote-title {
+    color: #005b2b;
+}
+.soc-button {
+    padding-left: 28px;
+    position: relative;
+}
+.soc-button a {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.vote_number {
+    display: inline-block;
+    line-height: 22px;
+    width: 42px;
+    text-align: center;
+    border: 1px solid #cfcfcf;
+    color: #101010;
+}
+.Facebook-button {
+    background: url("images/fb.jpg") no-repeat center left;
+}
+.VKontakte-button {
+    background: url("images/vk.jpg") no-repeat center left;
+}
+.Odnoklassniki-button {
+    background: url("images/ok.jpg") no-repeat center left;
+}
+.voted {
+    opacity: 0.5;
+}

@@ -19,7 +19,7 @@ Class htc_sociallikes extends CModule
 
     function htc_sociallikes()
     {
-        error_reporting(E_ALL);
+        error_reporting(E_WARNING);
         $arModuleVersion = array();
 
         $path = str_replace('\\', '/', __FILE__);

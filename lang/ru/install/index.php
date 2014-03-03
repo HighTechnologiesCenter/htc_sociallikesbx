@@ -28,4 +28,6 @@ $MESS['HTC_UNINSTALL_SAVE_HLBLOCK'] = 'Удалить Highload инфоблок�
 $MESS['HTC_SAVE'] = 'Применить';
 $MESS['HTC_WARNING'] = 'Внимание! Модуль будет удален из системы.';
 
+$MESS['HTC_SOCIALLIKES_PARTNER_NAME'] = "Центр Высоких Технологий";
+$MESS['HTC_SOCIALLIKES_PARTNER_URI'] = 'http://htc-cs.ru';
 ?>

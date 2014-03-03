@@ -8,14 +8,14 @@ if (class_exists('htc_sociallikes'))
 
 Class htc_sociallikes extends CModule
 {
-    var $MODULE_ID = 'htc_sociallikes',
-        $HLBLOCK_NAME = 'sociallikes',
-        $ENTITY_ID = 'HLBLOCK_%s',
-        $MODULE_VERSION,
-        $MODULE_VERSION_DATE,
-        $MODULE_NAME,
-        $MODULE_DESCRIPTION,
-        $MODULE_CSS;
+    var $MODULE_ID = 'htc.sociallikes';
+    var $HLBLOCK_NAME = 'sociallikes';
+    var $ENTITY_ID = 'HLBLOCK_%s';
+    var $MODULE_VERSION;
+    var $MODULE_VERSION_DATE;
+    var $MODULE_NAME;
+    var $MODULE_DESCRIPTION;
+    var $MODULE_CSS;
 
     function htc_sociallikes()
     {
@@ -40,6 +40,8 @@ Class htc_sociallikes extends CModule
 
         $this->MODULE_NAME = GetMessage('HTC_SOCIALLIKES_MODULE_NAME');
         $this->MODULE_DESCRIPTION = GetMessage('HTC_SOCIALLIKES_MODULE_DESC');
+        $this->PARTNER_NAME = GetMessage('HTC_SOCIALLIKES_PARTNER_NAME');
+        $this->PARTNER_URI = GetMessage('HTC_SOCIALLIKES_PARTNER_URI');
     }
 
     /**

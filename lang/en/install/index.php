@@ -27,4 +27,7 @@ $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_SOCIAL_NETWORK'] = 'Social network identifier
 $MESS['HTC_UNINSTALL_SAVE_HLBLOCK'] = 'Delete Highload information blocks';
 $MESS['HTC_SAVE'] = 'Apply';
 $MESS['HTC_WARNING'] = 'Warning! Module is removed from the system. ';
+
+$MESS['HTC_SOCIALLIKES_PARTNER_NAME'] = 'High Technologies Center';
+$MESS['HTC_SOCIALLIKES_PARTNER_URI'] = 'http://htc-cs.com';
 ?>

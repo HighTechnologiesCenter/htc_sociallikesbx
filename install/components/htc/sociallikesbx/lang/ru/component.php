@@ -1,4 +1,4 @@
 <?php
-$MESS['NOT_SPECIFIED_ITEM_IDENTIFIER'] = 'ÐžÑˆÐ¸Ð±ÐºÐ°. ÐÐµ Ð·Ð°Ð´Ð°Ð½ Ð¸Ð´ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°.';
-$MESS['NOT_FOUND_HIGHLOAD_IBLOCK'] = 'ÐÐµ Ð½Ð°Ð¹Ð´ÐµÐ½ highload Ð¸Ð½Ñ„Ð¾Ð±Ð»Ð¾Ðº';
+$MESS['NOT_SPECIFIED_ITEM_IDENTIFIER'] = 'Îøèáêà. Íå çàäàí èäåíòèôèêàòîð ýëåìåíòà.';
+$MESS['NOT_FOUND_HIGHLOAD_IBLOCK'] = 'Íå íàéäåí highload èíôîáëîê';
 ?>

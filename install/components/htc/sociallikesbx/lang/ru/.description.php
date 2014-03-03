@@ -1,4 +1,4 @@
 <?
-$MESS ['AUTHORIZATION_THROUGH_SOCIAL_SERVICES'] = "Ð“Ð¾Ð»Ð¾ÑÐ¾Ð²Ð°Ð½Ð¸Ðµ Ñ‡ÐµÑ€ÐµÐ· ÑÐ¾Ñ†. ÑÐµÑ€Ð²Ð¸ÑÑ‹";
-$MESS ['SOCIAL_SERVICES'] = "Ð¡Ð¾Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ðµ ÑÐµÑ€Ð²Ð¸ÑÑ‹";
+$MESS ['AUTHORIZATION_THROUGH_SOCIAL_SERVICES'] = "Ãîëîñîâàíèå ÷åðåç ñîö. ñåðâèñû";
+$MESS ['SOCIAL_SERVICES'] = "Ñîöèàëüíûå ñåðâèñû";
 ?>

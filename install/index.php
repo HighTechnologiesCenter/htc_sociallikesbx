@@ -19,6 +19,7 @@ Class htc_sociallikes extends CModule
 
     function htc_sociallikes()
     {
+        error_reporting(E_ALL);
         $arModuleVersion = array();
 
         $path = str_replace('\\', '/', __FILE__);
@@ -259,17 +260,17 @@ Class htc_sociallikes extends CModule
 
             RegisterModule( $this->MODULE_ID );
 
-//            $APPLICATION->IncludeAdminFile(
-//                GetMessage('HTC_SOCIALLIKES_INSTALL_TITLE'),
-//                $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/step.php'
-//            );
+            $APPLICATION->IncludeAdminFile(
+                GetMessage('HTC_SOCIALLIKES_INSTALL_TITLE'),
+                $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/step.php'
+            );
         }
         else
         {
-//            $APPLICATION->IncludeAdminFile(
-//                GetMessage('HTC_SOCIALLIKES_INSTALL_TITLE'),
-//                $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/error_not_connected_module.php'
-//            );
+            $APPLICATION->IncludeAdminFile(
+                GetMessage('HTC_SOCIALLIKES_INSTALL_TITLE'),
+                $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/error_not_connected_module.php'
+            );
         }
     }
 
@@ -280,10 +281,10 @@ Class htc_sociallikes extends CModule
 
         if ($step < 2)
         {
-//            $APPLICATION->IncludeAdminFile(
-//                GetMessage("HTC_SOCIALLIKES_UNINSTALL_TITLE"),
-//                $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/unstep1.php'
-//            );
+            $APPLICATION->IncludeAdminFile(
+                GetMessage("HTC_SOCIALLIKES_UNINSTALL_TITLE"),
+                $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/unstep1.php'
+            );
         }
         elseif ($step == 2)
         {
@@ -293,10 +294,10 @@ Class htc_sociallikes extends CModule
 
             UnRegisterModule( $this->MODULE_ID );
 
-//            $APPLICATION->IncludeAdminFile(
-//                GetMessage('HTC_SOCIALLIKES_UNINSTALL_TITLE'),
-//                $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/unstep2.php'
-//            );
+            $APPLICATION->IncludeAdminFile(
+                GetMessage('HTC_SOCIALLIKES_UNINSTALL_TITLE'),
+                $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/unstep2.php'
+            );
         }
 
     }

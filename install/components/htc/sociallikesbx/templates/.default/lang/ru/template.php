@@ -1,8 +1,8 @@
 <?
-$MESS['SOCSERV_AS_USER_NOTE'] = 'Р’С‹ РјРѕР¶РµС‚Рµ РїСЂРѕРіРѕР»РѕСЃРѕРІР°С‚СЊ, РµСЃР»Рё Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹ РЅР° РѕРґРЅРѕРј РёР· СЌС‚РёС… СЃРµСЂРІРёСЃРѕРІ:';
-$MESS['AUTH_LOGOUT_BUTTON'] = 'Р’С‹Р№С‚Рё';
-$MESS['USER_CAN_NOT_VOTE'] = 'РЎРµРіРѕРґРЅСЏ РІС‹ СѓР¶Рµ РїСЂРѕРіРѕР»РѕСЃРѕРІР°Р»Рё';
-$MESS['USER_CAN_VOTE'] = 'Р“РѕР»РѕСЃРѕРІР°С‚СЊ Р·Р° СЂР°Р±РѕС‚Сѓ';
+$MESS['SOCSERV_AS_USER_NOTE'] = 'Вы можете проголосовать, если зарегистрированы на одном из этих сервисов:';
+$MESS['AUTH_LOGOUT_BUTTON'] = 'Выйти';
+$MESS['USER_CAN_NOT_VOTE'] = 'Сегодня вы уже проголосовали';
+$MESS['USER_CAN_VOTE'] = 'Голосовать за работу';
 $MESS['METADATA'] = '<meta property="og:title" content="%s" />
                     <meta property="og:url" content="%s" />
                     <meta property="og:image" content="%s" />

@@ -40,17 +40,17 @@ function change_votes(data){
     $od.getElementsByClassName('vote_number')[0].innerHTML = $json['NUMBER_VOTES']['ODNOKLASSNIKI'];
 
     /**
-     * РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ
+     * Общее количество
      */
     //document.getElementsByClassName('photo-votes-number')[0].innerHTML = $json['NUMBER_VOTES']['VKONTAKTE'] + $json['NUMBER_VOTES']['FACEBOOK'] + $json['NUMBER_VOTES']['ODNOKLASSNIKI'];
 
     if ($json['AUTH_SERVICES'][$json['USER']['SOCIAL_NETWORK_AUTH_USER']]['USER_CAN_VOTE'] == 'Y')
     {
-        document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'Р“РѕР»РѕСЃРѕРІР°С‚СЊ Р·Р° СЂР°Р±РѕС‚Сѓ';
+        document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'Голосовать за работу';
     }
     else
     {
-        document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'РЎРµРіРѕРґРЅСЏ РІС‹ СѓР¶Рµ РїСЂРѕРіРѕР»РѕСЃРѕРІР°Р»Рё';
+        document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'Сегодня вы уже проголосовали';
         document.getElementsByClassName($json['SOCIAL_NETWORK_AUTH_USER'] + '-button')[0].classList.add('voted');
     }
 }

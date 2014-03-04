@@ -284,10 +284,5 @@ Class htc_sociallikes extends CModule
         $this->UnInstallFiles();
 
         UnRegisterModule( $this->MODULE_ID );
-
-        $APPLICATION->IncludeAdminFile(
-            GetMessage('HTC_SOCIALLIKES_UNINSTALL_TITLE'),
-            $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/unstep2.php'
-        );
     }
 }

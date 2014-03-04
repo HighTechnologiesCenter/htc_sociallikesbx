@@ -286,7 +286,7 @@ Class htc_sociallikes extends CModule
                 $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/unstep1.php'
             );
         }
-        elseif ($step == 2)
+        else
         {
             $this->unInstallHlblock($_REQUEST["save_hlblock"]);
 

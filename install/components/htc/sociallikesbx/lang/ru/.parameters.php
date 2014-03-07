@@ -9,4 +9,7 @@ $MESS['LINK_TO_WALL_POST'] = 'Ссылка на элемент (для постинга на стену соц. сете
 $MESS['LINK_NAME_TO_WALL_POST'] = 'Наименование ссылки (для постинга на стену соц. сетей)';
 $MESS['MESSAGE_TO_WALL_POST'] = 'Описание элемента (для постинга на стену соц. сетей)';
 $MESS['PICTURE_URL_TO_WALL_POST'] = 'Полная ссылка на картинку (для постинга на стену соц. сетей)';
+$MESS['VKONTAKTE'] = 'ВКонтакте';
+$MESS['ODNOKLASSNIKI'] = 'Одноклассники';
+$MESS['FACEBOOK'] = 'Facebook';
 ?>

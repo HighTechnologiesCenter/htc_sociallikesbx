@@ -18,9 +18,9 @@ while($iblock = $selectedResultDB->Fetch())
 }
 
 $socialNetworks = array(
-    'VKontakte' => 'ВКонтакте',
-    'Facebook' => 'Facebook',
-    'Odnoklassniki' => 'Одноклассники'
+    'VKontakte' => GetMessage('VKONTAKTE'),
+    'Facebook' => GetMessage('FACEBOOK'),
+    'Odnoklassniki' => GetMessage('ODNOKLASSNIKI'),
 );
 
 $arComponentParameters = array(

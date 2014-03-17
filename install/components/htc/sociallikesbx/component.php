@@ -9,7 +9,8 @@ $arResult = array();
 $arParams["ELEMENT_ID"] = (int)$arParams["ELEMENT_ID"];
 if ($arParams["ELEMENT_ID"] == 0)
 {
-    throw new \Exception(GetMessage('NOT_SPECIFIED_ITEM_IDENTIFIER'));
+	ShowError(GetMessage("NOT_SPECIFIED_ITEM_IDENTIFIER"));
+	return;
 }
 
 $post = array();
@@ -76,7 +77,8 @@ if ($USER->IsAuthorized())
          */
         if (!CModule::IncludeModule('highloadblock'))
         {
-            throw new \Exception(GetMessage('NOT_FOUND_HIGHLOAD_IBLOCK'));
+			ShowError(GetMessage('NOT_FOUND_HIGHLOAD_IBLOCK'));
+			return;
         }
         $hlblock = HL\HighloadBlockTable::getList(array(
             "filter" => array('TABLE_NAME' => CSocialLikesConstants::TABLE_HIGHLOAD_IBLOCK_VOTE)
@@ -84,7 +86,8 @@ if ($USER->IsAuthorized())
 
         if ((int)$hlblock['ID'] == 0)
         {
-            throw new \Exception(GetMessage('NOT_FOUND_HIGHLOAD_IBLOCK'));
+			ShowError(GetMessage('NOT_FOUND_HIGHLOAD_IBLOCK'));
+			return;
         }
 
         $entity = HL\HighloadBlockTable::compileEntity($hlblock);

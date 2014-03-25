@@ -2,7 +2,7 @@
 
 use Bitrix\Highloadblock as HL;
 use Bitrix\Main\Application as Application;
-CModule::IncludeModule('htc_sociallikes');
+CModule::IncludeModule('htc.sociallikes');
 
 $arResult = array();
 

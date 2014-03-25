@@ -1,5 +1,5 @@
 <?php
-CModule::AddAutoloadClasses('htc_sociallikes', array(
+CModule::AddAutoloadClasses('htc.sociallikes', array(
     'CSocialLikesConstants' => 'lib/CSocialLikesConstants.php'
 ));
 ?>

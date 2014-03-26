@@ -91,6 +91,22 @@ Class htc_sociallikes extends CModule
                     'EN' => GetMessage('HTC_CUSTOM_FIELD_NAME_EN_UF_USER_ID'),
                 ),
             ),
+			'UF_USER_NAME' => array(
+                'FIELD_NAME' => 'UF_USER_NAME',
+                'USER_TYPE_ID'      => 'string',
+                'EDIT_FORM_LABEL'   => array(
+                    'RU' => GetMessage('HTC_CUSTOM_FIELD_NAME_RU_UF_USER_NAME'),
+                    'EN' => GetMessage('HTC_CUSTOM_FIELD_NAME_EN_UF_USER_NAME'),
+                ),
+            ),
+			'UF_WEB_USER_PAGE' => array(
+                'FIELD_NAME' => 'UF_WEB_USER_PAGE',
+                'USER_TYPE_ID'      => 'string',
+                'EDIT_FORM_LABEL'   => array(
+                    'RU' => GetMessage('HTC_CUSTOM_FIELD_NAME_RU_UF_WEB_USER_PAGE'),
+                    'EN' => GetMessage('HTC_CUSTOM_FIELD_NAME_EN_UF_WEB_USER_PAGE'),
+                ),
+            ),
             'UF_ELEMENT_ID' => array(
                 'FIELD_NAME' => 'UF_ELEMENT_ID',
                 'USER_TYPE_ID'      => 'string',
@@ -200,7 +216,7 @@ Class htc_sociallikes extends CModule
                 /**
                  * Если HLBlock найден, то проверяем наличие пользовательских полей и добавляем недостающие
                  */
-                $userTypeEntity = array('UF_USER_ID', 'UF_ELEMENT_ID', 'UF_DATE', 'UF_SOCIAL_NETWORK');
+                $userTypeEntity = array('UF_USER_ID', 'UF_USER_NAME', 'UF_WEB_USER_PAGE', 'UF_ELEMENT_ID', 'UF_DATE', 'UF_SOCIAL_NETWORK');
 
                 $selectedResultUserTypeDB = CUserTypeEntity::GetList(
                     array(),

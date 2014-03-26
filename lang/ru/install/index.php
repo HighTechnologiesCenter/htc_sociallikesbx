@@ -18,8 +18,12 @@ $MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_ID'] = 'Идентификатор пользователя';
 $MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_ELEMENT_ID'] = 'Идентификатор элемента';
 $MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_DATE'] = 'Дата голосования';
 $MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_SOCIAL_NETWORK'] = 'Идентификатор соц. сети';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_NAME'] = 'Имя пользователя';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_WEB_USER_PAGE'] = 'Веб-страница пользователя';
 
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_USER_ID'] = 'User ID';
+$MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_USER_NAME'] = 'User name';
+$MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_WEB_USER_PAGE'] = 'Web user page';
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_ELEMENT_ID'] = 'Element ID';
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_DATE'] = 'Date of vote';
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_SOCIAL_NETWORK'] = 'Social network identifier';

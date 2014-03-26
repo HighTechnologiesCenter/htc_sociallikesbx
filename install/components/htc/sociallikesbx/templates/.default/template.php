@@ -1,6 +1,6 @@
 <?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-if(is_array($arResult["AUTH_SERVICES"]))
+if(is_array($arResult["AUTH_SERVICES"]) && count($arResult["AUTH_SERVICES"]) > 0)
 {?>
     <div class="soc-buttons-cont">
         <span class="soc-vote-title"><? $APPLICATION->ShowViewContent('votingStatus'); ?></span>

@@ -2,6 +2,7 @@
 
 use Bitrix\Highloadblock as HL;
 use Bitrix\Main\Application as Application;
+CModule::IncludeModule('iblock');
 CModule::IncludeModule('htc.sociallikes');
 
 $arResult = array();
@@ -54,9 +55,10 @@ if ($USER->IsAuthorized())
         $isUserAuthorizedSocialNetwork = true;
 
         $arResult["USER"] = array(
-            "NAME" => htmlspecialcharsEx($userData['LOGIN']),
+            "NAME" => htmlspecialcharsEx($userData['NAME']),
             "LAST_NAME" => htmlspecialcharsEx($userData['LAST_NAME']),
-            "USER_LOGIN" => htmlspecialcharsEx($userData['LOGIN'])
+            "USER_LOGIN" => htmlspecialcharsEx($userData['LOGIN']),
+			"PERSONAL_WWW" => $userData['PERSONAL_WWW']
         );
 
         if (substr_count($arResult["USER"]["USER_LOGIN"], 'VKuser') > 0)
@@ -184,6 +186,8 @@ if ($USER->IsAuthorized())
                 //$postId = (int)$post["post_id"]; // Идентификатор поста на стене соц. сети
                 $result = $entityDataClass::add(array(
                     'UF_USER_ID' => $USER->GetID(),
+					'UF_USER_NAME' => sprintf('%s %s', $arResult["USER"]['NAME'], $arResult["USER"]['LAST_NAME']),
+					'UF_USER_WEB_USER_PAGE' => $arResult['USER']['PERSONAL_WWW'],
                     'UF_ELEMENT_ID' => $arParams["ELEMENT_ID"],
                     'UF_DATE' => date("d.m.Y H:i:s"),
                     'UF_SOCIAL_NETWORK' => $arResult["USER"]["SOCIAL_NETWORK_AUTH_USER"]
@@ -310,4 +314,4 @@ if ($post['vote'] == 'Y')
     die();
 }
 
-$this->IncludeComponentTemplate();?>
+$this->IncludeComponentTemplate();

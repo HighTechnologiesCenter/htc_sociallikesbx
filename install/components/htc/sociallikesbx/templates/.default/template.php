@@ -2,7 +2,11 @@
 
 if(is_array($arResult["AUTH_SERVICES"]) && count($arResult["AUTH_SERVICES"]) > 0)
 {?>
-    <div class="soc-buttons-cont">
+    <div class="soc-buttons-cont"><?
+		if (!empty($arResult['USER']['NAME']))
+		{?>
+			<span class="soc-user-name"><?= sprintf('%s %s', $arResult['USER']['NAME'], $arResult['USER']['LAST_NAME'])?></span><?
+		}?>		
         <span class="soc-vote-title"><? $APPLICATION->ShowViewContent('votingStatus'); ?></span>
         <form name="bx_auth_services" action="<?= $arResult["CURRENT_URL"]?>" class="bx_auth_services" target="_top" method="post">
             <input type="hidden" name="auth_service_id" value="" /><?php
@@ -25,7 +29,7 @@ if(is_array($arResult["AUTH_SERVICES"]) && count($arResult["AUTH_SERVICES"]) > 0
                         $isUserCanVote = false;
                     }?>
 
-                    <div <?= ($service['USER_CAN_VOTE'] == 'Y') ? 'id="js-' . $service["ID"] . '-vote"' : ''; ?> class="<?= $service["ID"]?>-button soc-button <?= ($service['USER_CAN_VOTE'] == 'N') ? 'voted' : ''; ?>">
+                    <div id="js-<?= $service["ID"]?>-vote" class="<?= $service["ID"]?>-button soc-button <?= ($service['USER_CAN_VOTE'] == 'N') ? 'voted' : ''; ?>">
                         <span class="vote_number"><?= $arResult['NUMBER_VOTES'][strtoupper($service['ID'])]?></span>
                     </div><?php
                 }

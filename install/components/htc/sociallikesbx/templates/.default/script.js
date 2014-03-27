@@ -39,11 +39,6 @@ function change_votes(data){
     var $od = document.getElementsByClassName('Odnoklassniki-button')[0];
     $od.getElementsByClassName('vote_number')[0].innerHTML = $json['NUMBER_VOTES']['ODNOKLASSNIKI'];
 
-    /**
-     * Общее количество
-     */
-    //document.getElementsByClassName('photo-votes-number')[0].innerHTML = $json['NUMBER_VOTES']['VKONTAKTE'] + $json['NUMBER_VOTES']['FACEBOOK'] + $json['NUMBER_VOTES']['ODNOKLASSNIKI'];
-
     if ($json['AUTH_SERVICES'][$json['USER']['SOCIAL_NETWORK_AUTH_USER']]['USER_CAN_VOTE'] == 'Y')
     {
         document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'Голосовать за работу';

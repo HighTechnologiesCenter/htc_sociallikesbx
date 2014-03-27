@@ -187,7 +187,7 @@ if ($USER->IsAuthorized())
                 $result = $entityDataClass::add(array(
                     'UF_USER_ID' => $USER->GetID(),
 					'UF_USER_NAME' => sprintf('%s %s', $arResult["USER"]['NAME'], $arResult["USER"]['LAST_NAME']),
-					'UF_USER_WEB_USER_PAGE' => $arResult['USER']['PERSONAL_WWW'],
+					'UF_WEB_USER_PAGE' => $arResult['USER']['PERSONAL_WWW'],
                     'UF_ELEMENT_ID' => $arParams["ELEMENT_ID"],
                     'UF_DATE' => date("d.m.Y H:i:s"),
                     'UF_SOCIAL_NETWORK' => $arResult["USER"]["SOCIAL_NETWORK_AUTH_USER"]

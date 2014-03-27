@@ -21,8 +21,8 @@
 }
 .soc-button a {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 24px !important;
+    height: 24px !important;
     top: 0;
     left: 0;
     z-index: 5;
@@ -36,14 +36,32 @@
     color: #101010;
 }
 .Facebook-button {
-    background: url("images/fb.jpg") no-repeat center left;
+    background: url("images/fb.jpg") no-repeat center left !important;
 }
 .VKontakte-button {
-    background: url("images/vk.jpg") no-repeat center left;
+    background: url("images/vk.jpg") no-repeat center left !important;
 }
 .Odnoklassniki-button {
-    background: url("images/ok.jpg") no-repeat center left;
+    background: url("images/ok.jpg") no-repeat center left !important;
 }
 .voted {
     opacity: 0.5;
+}
+.soc-button span.bx-spacer {
+	width: 0 !important;
+display: none;
+}
+.soc-button a {
+	background-image: none !important;
+	margin-left: 0px;
+	position: absolute;
+}
+.soc-button a.facebook-button {
+    background: url("images/fb.jpg") no-repeat center left !important;
+}
+.soc-button a.vkontakte-button {
+    background: url("images/vk.jpg") no-repeat center left !important;
+}
+.soc-button a.odnoklassniki-button {
+    background: url("images/ok.jpg") no-repeat center left !important;
 }

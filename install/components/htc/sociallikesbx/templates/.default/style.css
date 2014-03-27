@@ -1,19 +1,25 @@
 .soc-buttons-cont {
-    float: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 700px;
 }
-.soc-buttons-cont, .soc-vote-title, .soc-button, .bx_auth_services {
+.soc-button, .bx_auth_services {
     display: inline-block;
     vertical-align: middle;
     margin-left: 20px;
 }
 .bx_auth_services {
     margin-left: 0;
+    float: right;
 }
 .bx-spacer, .bx-spacer + span {
     display: none;
 }
 .soc-vote-title {
-    color: #005b2b;
+    display: inline-block;
+    vertical-align: middle;
+    color: #005da4;
+    float: left;
 }
 .soc-button {
     padding-left: 28px;
@@ -48,13 +54,13 @@
     opacity: 0.5;
 }
 .soc-button span.bx-spacer {
-	width: 0 !important;
-display: none;
+    width: 0 !important;
+    display: none;
 }
 .soc-button a {
-	background-image: none !important;
-	margin-left: 0px;
-	position: absolute;
+    background-image: none !important;
+    margin-left: 0px;
+    position: absolute;
 }
 .soc-button a.facebook-button {
     background: url("images/fb.jpg") no-repeat center left !important;
@@ -64,4 +70,9 @@ display: none;
 }
 .soc-button a.odnoklassniki-button {
     background: url("images/ok.jpg") no-repeat center left !important;
+}
+.soc-user-name {
+    float: left;
+    width: 205px;
+    font-weight: bold;
 }

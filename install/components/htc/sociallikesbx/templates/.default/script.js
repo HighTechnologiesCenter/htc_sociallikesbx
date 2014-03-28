@@ -39,13 +39,16 @@ function change_votes(data){
     var $od = document.getElementsByClassName('Odnoklassniki-button')[0];
     $od.getElementsByClassName('vote_number')[0].innerHTML = $json['NUMBER_VOTES']['ODNOKLASSNIKI'];
 
-    if ($json['AUTH_SERVICES'][$json['USER']['SOCIAL_NETWORK_AUTH_USER']]['USER_CAN_VOTE'] == 'Y')
+    var $currentSocial = $json['AUTH_SERVICES'][$json['USER']['SOCIAL_NETWORK_AUTH_USER']];
+    if ($currentSocial['USER_CAN_VOTE'] == 'N' || ($currentSocial['USER_CAN_VOTE'] == 'Y' && $currentSocial['USER_SELECTED_ITEM'] == 'Y'))
     {
-        document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'Голосовать за работу';
+        document.getElementsByClassName('user_can_vote')[0].style.display = 'none';
+        document.getElementsByClassName('user_can_not_vote')[0].style.display = 'block';
+        document.getElementsByClassName($json['SOCIAL_NETWORK_AUTH_USER'] + '-button')[0].classList.add('voted');
     }
     else
     {
-        document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'Вы проголосовали';
-        document.getElementsByClassName($json['SOCIAL_NETWORK_AUTH_USER'] + '-button')[0].classList.add('voted');
+        document.getElementsByClassName('user_can_vote')[0].style.display = 'block';
+        document.getElementsByClassName('user_can_not_vote')[0].style.display = 'none';
     }
 }

@@ -10,8 +10,8 @@ $arResult = array();
 $arParams["ELEMENT_ID"] = (int)$arParams["ELEMENT_ID"];
 if ($arParams["ELEMENT_ID"] == 0)
 {
-	ShowError(GetMessage("NOT_SPECIFIED_ITEM_IDENTIFIER"));
-	return;
+    ShowError(GetMessage("NOT_SPECIFIED_ITEM_IDENTIFIER"));
+    return;
 }
 
 $post = array();
@@ -58,7 +58,7 @@ if ($USER->IsAuthorized())
             "NAME" => htmlspecialcharsEx($userData['NAME']),
             "LAST_NAME" => htmlspecialcharsEx($userData['LAST_NAME']),
             "USER_LOGIN" => htmlspecialcharsEx($userData['LOGIN']),
-			"PERSONAL_WWW" => $userData['PERSONAL_WWW']
+            "PERSONAL_WWW" => $userData['PERSONAL_WWW']
         );
 
         if (substr_count($arResult["USER"]["USER_LOGIN"], 'VKuser') > 0)
@@ -79,8 +79,8 @@ if ($USER->IsAuthorized())
          */
         if (!CModule::IncludeModule('highloadblock'))
         {
-			ShowError(GetMessage('NOT_FOUND_HIGHLOAD_IBLOCK'));
-			return;
+            ShowError(GetMessage('NOT_FOUND_HIGHLOAD_IBLOCK'));
+            return;
         }
         $hlblock = HL\HighloadBlockTable::getList(array(
             "filter" => array('TABLE_NAME' => CSocialLikesConstants::TABLE_HIGHLOAD_IBLOCK_VOTE)
@@ -88,29 +88,45 @@ if ($USER->IsAuthorized())
 
         if ((int)$hlblock['ID'] == 0)
         {
-			ShowError(GetMessage('NOT_FOUND_HIGHLOAD_IBLOCK'));
-			return;
+            ShowError(GetMessage('NOT_FOUND_HIGHLOAD_IBLOCK'));
+            return;
         }
 
         $entity = HL\HighloadBlockTable::compileEntity($hlblock);
         $entityDataClass = $entity->getDataClass();
 
-        /**
-         * Если запрещено голосование за несколько элементов
-         */
+
         $arResult['USER_CAN_VOTE'] = 'Y';
-        if ($arParams['ALLOWED_VOTE_FOR_MULTIPLE_ITEMS'] != 'Y' && $arParams['ALLOWED_CANCEL_VOTE_FOR_ELEMENT'] != 'Y')
+
+        /**
+         * Проверяем может ли проголосовать пользователь
+         */
+        $selectedResultUserVoiceDB = $entityDataClass::getList(array(
+            'filter'=>array(
+                'UF_USER_ID' => $USER->GetID()
+            ),
+            'select'=>array('ID', 'UF_ELEMENT_ID')
+        ));
+        while ($userVoice = $selectedResultUserVoiceDB->fetch())
         {
-            /**
-             * Проверяем голосовал ли пользователь за выбранный элемент
-             */
-            $selectedResultUserVoiceDB = $entityDataClass::getList(array(
-                'filter'=>array(
-                    'UF_USER_ID' => $USER->GetID()
-                ),
-                'select'=>array('ID')
-            ));
-            if ($userVoice = $selectedResultUserVoiceDB->fetch())
+            if ($userVoice['UF_ELEMENT_ID'] == $arParams["ELEMENT_ID"])
+            {
+                if ($arParams['ALLOWED_VOTE_FOR_MULTIPLE_ITEMS'] == 'N')
+                {
+                    if ($arParams['ALLOWED_CANCEL_VOTE_FOR_ELEMENT'] == 'Y')
+                    {
+                        $arResult['USER_CAN_VOTE'] = 'Y';
+                        break;
+                    }
+                    else
+                    {
+                        $arResult['USER_CAN_VOTE'] = 'N';
+                        break;
+                    }
+                }
+            }
+
+            if ($arParams['ALLOWED_VOTE_FOR_MULTIPLE_ITEMS'] == 'N')
             {
                 $arResult['USER_CAN_VOTE'] = 'N';
             }
@@ -186,8 +202,8 @@ if ($USER->IsAuthorized())
                 //$postId = (int)$post["post_id"]; // Идентификатор поста на стене соц. сети
                 $result = $entityDataClass::add(array(
                     'UF_USER_ID' => $USER->GetID(),
-					'UF_USER_NAME' => sprintf('%s %s', $arResult["USER"]['NAME'], $arResult["USER"]['LAST_NAME']),
-					'UF_WEB_USER_PAGE' => $arResult['USER']['PERSONAL_WWW'],
+                    'UF_USER_NAME' => sprintf('%s %s', $arResult["USER"]['NAME'], $arResult["USER"]['LAST_NAME']),
+                    'UF_WEB_USER_PAGE' => $arResult['USER']['PERSONAL_WWW'],
                     'UF_ELEMENT_ID' => $arParams["ELEMENT_ID"],
                     'UF_DATE' => date("d.m.Y H:i:s"),
                     'UF_SOCIAL_NETWORK' => $arResult["USER"]["SOCIAL_NETWORK_AUTH_USER"]
@@ -250,6 +266,22 @@ if(CModule::IncludeModule("socialservices"))
                     'USER_CAN_VOTE' => $arResult['USER_CAN_VOTE']
                 );
                 unset($arResult['USER_CAN_VOTE']);
+                $service['USER_SELECTED_ITEM'] = 'N';
+                $selectedResultVoiceUserDB = $entityDataClass::getList(array(
+                    'filter'=>array(
+                        'UF_USER_ID' => $USER->GetID(),
+                        'UF_ELEMENT_ID' => $arParams["ELEMENT_ID"]
+                    ),
+                    'select'=>array('ID'),
+                    'order' => array('ID' => 'DESC')
+                ));
+                if ($voiceUser = $selectedResultVoiceUserDB->fetch())
+                {
+                    if (!empty($voiceUser['ID']))
+                    {
+                        $service['USER_SELECTED_ITEM'] = 'Y';
+                    }
+                }
             }
             if (!in_array($service['ID'], $arParams['SOCIAL_NETWORKS']))
             {

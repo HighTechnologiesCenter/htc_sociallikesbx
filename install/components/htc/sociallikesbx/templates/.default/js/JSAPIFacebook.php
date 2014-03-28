@@ -23,25 +23,31 @@
         }
     }, 200);
 
+    function postFB()
+    {
+        FB.api(
+            '/me/feed',
+            'post',
+            {
+                message: '<?= $message; ?>',
+                description: '<?= $message; ?>',
+                link: '<?= $linkUrl; ?>',
+                name: '<?= $linkName; ?>',
+                picture: '<?= $pictureUrl; ?>'
+            },
+            function(response) {
+                if (!response || response.error) {
+                    postFB();
+                    return false;
+                }
+            }
+        );
+    }
+
     if (document.getElementById($elementId))
     {
         document.getElementById($elementId).onclick = function() {
-            FB.api(
-                '/me/feed',
-                'post',
-                {
-                    message: '<?= $message; ?>',
-                    description: '<?= $message; ?>',
-                    link: '<?= $linkUrl; ?>',
-                    name: '<?= $linkName; ?>',
-                    picture: '<?= $pictureUrl; ?>'
-                },
-                function(response) {
-                    if (!response || response.error) {
-                        console.log('Error occured');
-                    }
-                }
-            );
+            postFB();
 
             BX.ajax.post(
                 window.location.href,

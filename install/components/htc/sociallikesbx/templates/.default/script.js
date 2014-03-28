@@ -45,7 +45,7 @@ function change_votes(data){
     }
     else
     {
-        document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'Сегодня вы уже проголосовали';
+        document.getElementsByClassName('soc-vote-title')[0].innerHTML = 'Вы проголосовали';
         document.getElementsByClassName($json['SOCIAL_NETWORK_AUTH_USER'] + '-button')[0].classList.add('voted');
     }
 }

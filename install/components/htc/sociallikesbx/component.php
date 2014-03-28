@@ -99,7 +99,7 @@ if ($USER->IsAuthorized())
          * Если запрещено голосование за несколько элементов
          */
         $arResult['USER_CAN_VOTE'] = 'Y';
-        if ($arParams['ALLOWED_VOTE_FOR_MULTIPLE_ITEMS'] != 'Y')
+        if ($arParams['ALLOWED_VOTE_FOR_MULTIPLE_ITEMS'] != 'Y' && $arParams['ALLOWED_CANCEL_VOTE_FOR_ELEMENT'] != 'Y')
         {
             /**
              * Проверяем голосовал ли пользователь за выбранный элемент

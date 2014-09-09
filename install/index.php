@@ -26,15 +26,12 @@ Class htc_sociallikes extends CModule
         $path = substr($path, 0, strlen($path) - strlen('/index.php'));
         include($path . '/version.php');
 
-        if (is_array($arModuleVersion))
-        {
-            if (array_key_exists('VERSION', $arModuleVersion))
-            {
+        if (is_array($arModuleVersion)) {
+            if (array_key_exists('VERSION', $arModuleVersion)) {
                 $this->MODULE_VERSION = $arModuleVersion['VERSION'];
             }
 
-            if (array_key_exists('VERSION_DATE', $arModuleVersion))
-            {
+            if (array_key_exists('VERSION_DATE', $arModuleVersion)) {
                 $this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
             }
         }
@@ -67,9 +64,6 @@ Class htc_sociallikes extends CModule
      */
     function UnInstallFiles()
     {
-        /**
-         * ! удалять только свои компоненты
-         */
         DeleteDirFilesEx('/bitrix/components/htc/sociallikesbx');
 
         return true;
@@ -137,8 +131,7 @@ Class htc_sociallikes extends CModule
 
         foreach ($customFields as $fieldName => $customField)
         {
-            if (count($fieldsExcluded) == 0 || in_array($fieldName, $fieldsExcluded))
-            {
+            if (count($fieldsExcluded) == 0 || in_array($fieldName, $fieldsExcluded)) {
                 $dataUserFields = array(
                     'ENTITY_ID' => sprintf($this->ENTITY_ID, $hlblockId),
                     'FIELD_NAME' => $customField['FIELD_NAME'],
@@ -173,8 +166,7 @@ Class htc_sociallikes extends CModule
      */
     private function installHighloadblock()
     {
-        if (CModule::IncludeModule('highloadblock'))
-        {
+        if (CModule::IncludeModule('highloadblock')) {
             $selectedResultDB = HL\HighloadBlockTable::getList(
                 array(
                     'filter' => array(
@@ -186,8 +178,7 @@ Class htc_sociallikes extends CModule
                 ));
             $hlblock = $selectedResultDB->fetch();
 
-            if (empty($hlblock['ID']))
-            {
+            if (empty($hlblock['ID'])) {
                 /**
                  * Если HLBlock не найден, то создаем новый
                  */
@@ -198,21 +189,18 @@ Class htc_sociallikes extends CModule
 
                 $result = HL\HighloadBlockTable::add($hlblockData);
 
-                if ($result->isSuccess())
-                {
+                if ($result->isSuccess()) {
                     /**
                      * Добавляем пользовательские поля в HLBlock
                      */
                     $this->addCustomFieldsInHlblock($result->getId());
                 }
-                else
-                {
+                else {
                     global $APPLICATION;
                     $APPLICATION->ThrowException(GetMessage('HTC_ERROR_UNABLE_ADD_HIGHLOADBLOCK'));
                 }
             }
-            else
-            {
+            else {
                 /**
                  * Если HLBlock найден, то проверяем наличие пользовательских полей и добавляем недостающие
                  */
@@ -223,17 +211,14 @@ Class htc_sociallikes extends CModule
                     array(
                         'ENTITY_ID' => sprintf($this->ENTITY_ID, $hlblock['ID'])
                     ));
-                while($field = $selectedResultUserTypeDB->Fetch())
-                {
-                    if (in_array($field['FIELD_NAME'], $userTypeEntity))
-                    {
+                while($field = $selectedResultUserTypeDB->Fetch()) {
+                    if (in_array($field['FIELD_NAME'], $userTypeEntity)) {
                         $keys = array_keys($userTypeEntity, $field['FIELD_NAME']);
                         unset($userTypeEntity[$keys[0]]);
                     }
                 }
 
-                if (count($userTypeEntity) > 0)
-                {
+                if (count($userTypeEntity) > 0) {
                     /**
                     * Добавляем пользовательские поля в HLBlock
                     */
@@ -245,8 +230,7 @@ Class htc_sociallikes extends CModule
 
     private function unInstallHlblock($saveHlblock)
     {
-        if ($saveHlblock && CModule::IncludeModule('highloadblock'))
-        {
+        if ($saveHlblock && CModule::IncludeModule('highloadblock')) {
             $selectedResultDB = HL\HighloadBlockTable::getList(
                 array(
                     'filter' => array(
@@ -259,8 +243,7 @@ Class htc_sociallikes extends CModule
 
             $hlblock = $selectedResultDB->fetch();
 
-            if (! empty($hlblock['ID']))
-            {
+            if (! empty($hlblock['ID'])) {
                 HL\HighloadBlockTable::delete($hlblock['ID']);
             }
         }
@@ -269,8 +252,7 @@ Class htc_sociallikes extends CModule
     function DoInstall()
     {
         global $APPLICATION;
-        if (\Bitrix\Main\ModuleManager::isModuleInstalled('socialservices') && \Bitrix\Main\ModuleManager::isModuleInstalled('highloadblock'))
-        {
+        if (\Bitrix\Main\ModuleManager::isModuleInstalled('socialservices') && \Bitrix\Main\ModuleManager::isModuleInstalled('highloadblock')) {
             $this->InstallFiles();
             $this->installHighloadblock();
 
@@ -281,8 +263,7 @@ Class htc_sociallikes extends CModule
                 $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/step.php'
             );
         }
-        else
-        {
+        else {
             $APPLICATION->IncludeAdminFile(
                 GetMessage('HTC_SOCIALLIKES_INSTALL_TITLE'),
                 $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/error_not_connected_module.php'

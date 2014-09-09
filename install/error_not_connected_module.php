@@ -1,14 +1,11 @@
 <?php
-if (!check_bitrix_sessid())
-{
+if (!check_bitrix_sessid()) {
     return;
 }
 
 echo CAdminMessage::ShowMessage(GetMessage('HTC_ERROR_NOT_CONNECTED_MODULE_SOCIALSERVICES'));?>
 
 <form action="<?= $APPLICATION->GetCurPage()?>">
-
     <input type="hidden" name="lang" value="<?= LANG ?>">
     <input type="submit" name="" value="<?= GetMessage("MOD_BACK") ?>">
-
 <form>

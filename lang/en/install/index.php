@@ -2,24 +2,24 @@
 $MESS['HTC_SOCIALLIKES_MODULE_NAME'] = "Voting through social networks";
 $MESS['HTC_SOCIALLIKES_MODULE_DESC'] = "Module to allow users to vote through social networks";
 
-$MESS['HTC_SOCIALLIKES_INSTALL_TITLE'] = "Installing the «Voting through social networks» (htc.sociallikes).";
-$MESS['HTC_SOCIALLIKES_UNINSTALL_TITLE'] = "Removing the «Voting through social networks» (htc.sociallikes).";
+$MESS['HTC_SOCIALLIKES_INSTALL_TITLE'] = "Installing the Â«Voting through social networksÂ» (htc.sociallikes).";
+$MESS['HTC_SOCIALLIKES_UNINSTALL_TITLE'] = "Removing the Â«Voting through social networksÂ» (htc.sociallikes).";
 
-$MESS['HTC_SOCIALLIKES_INSTALL_COMPLETED'] = "The installation of the module «Voting through social networks»";
-$MESS['HTC_SOCIALLIKES_UNINSTALL_COMPLETED'] = "Module «Voting through social networks» removed from the system";
+$MESS['HTC_SOCIALLIKES_INSTALL_COMPLETED'] = "The installation of the module Â«Voting through social networksÂ»";
+$MESS['HTC_SOCIALLIKES_UNINSTALL_COMPLETED'] = "Module Â«Voting through social networksÂ» removed from the system";
 
-$MESS['HTC_ERROR_NOT_CONNECTED_MODULE_SOCIALSERVICES'] = "Error! Module functional modules based on «Social services» (socialservices) and «Highload Information blocks» (highloadblock). <br /> <br />
-                                                        1. Install the module «Social services» (socialservices). <br />
-                                                        2 . Install the module «Highload Information blocks» (highloadblock). <br />
-                                                        3 . Then install the module «Voting through social networks» (htc.sociallikes).";
+$MESS['HTC_ERROR_NOT_CONNECTED_MODULE_SOCIALSERVICES'] = "Error! Module functional modules based on Â«Social servicesÂ» (socialservices) and Â«Highload Information blocksÂ» (highloadblock). <br /> <br />
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 1. Install the module Â«Social servicesÂ» (socialservices). <br />
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 2 . Install the module Â«Highload Information blocksÂ» (highloadblock). <br />
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 3 . Then install the module Â«Voting through social networksÂ» (htc.sociallikes).";
 $MESS['HTC_ERROR_UNABLE_ADD_HIGHLOADBLOCK'] = 'Failed to add storage highloadblock voting results';
 
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_ID'] = 'Èäåíòèôèêàòîð ïîëüçîâàòåëÿ';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_ELEMENT_ID'] = 'Èäåíòèôèêàòîð ýëåìåíòà';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_DATE'] = 'Äàòà ãîëîñîâàíèÿ';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_SOCIAL_NETWORK'] = 'Èäåíòèôèêàòîð ñîö. ñåòè';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_NAME'] = 'Èìÿ ïîëüçîâàòåëÿ';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_WEB_USER_PAGE'] = 'Âåá-ñòðàíèöà ïîëüçîâàòåëÿ';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_ID'] = 'Ð˜Ð´ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_ELEMENT_ID'] = 'Ð˜Ð´ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_DATE'] = 'Ð”Ð°Ñ‚Ð° Ð³Ð¾Ð»Ð¾ÑÐ¾Ð²Ð°Ð½Ð¸Ñ';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_SOCIAL_NETWORK'] = 'Ð˜Ð´ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€ ÑÐ¾Ñ†. ÑÐµÑ‚Ð¸';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_NAME'] = 'Ð˜Ð¼Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_WEB_USER_PAGE'] = 'Ð’ÐµÐ±-ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ';
 
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_USER_ID'] = 'User ID';
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_USER_NAME'] = 'User name';
@@ -34,4 +34,3 @@ $MESS['HTC_WARNING'] = 'Warning! Module is removed from the system. ';
 
 $MESS['HTC_SOCIALLIKES_PARTNER_NAME'] = 'High Technologies Center';
 $MESS['HTC_SOCIALLIKES_PARTNER_URI'] = 'http://htc-cs.com';
-?>

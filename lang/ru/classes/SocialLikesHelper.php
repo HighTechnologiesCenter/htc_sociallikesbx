@@ -1,4 +1,4 @@
 <?php
-$MESS['VKONTAKTE'] = 'Ð’ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ðµ';
-$MESS['ODNOKLASSNIKI'] = 'ÐžÐ´Ð½Ð¾ÐºÐ»Ð°ÑÑÐ½Ð¸ÐºÐ¸';
+$MESS['VKONTAKTE'] = 'ÂÊîíòàêòå';
+$MESS['ODNOKLASSNIKI'] = 'Îäíîêëàññíèêè';
 $MESS['FACEBOOK'] = 'Facebook';

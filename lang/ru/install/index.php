@@ -1,25 +1,25 @@
 <?
-$MESS['HTC_SOCIALLIKES_MODULE_NAME'] = "Р“РѕР»РѕСЃРѕРІР°РЅРёРµ С‡РµСЂРµР· СЃРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµС‚Рё";
-$MESS['HTC_SOCIALLIKES_MODULE_DESC'] = "РњРѕРґСѓР»СЊ РґР»СЏ РіРѕР»РѕСЃРѕРІР°РЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ СЃРѕС†РёР°Р»СЊРЅС‹С… СЃРµС‚Рё.";
+$MESS['HTC_SOCIALLIKES_MODULE_NAME'] = "Голосование через социальные сети";
+$MESS['HTC_SOCIALLIKES_MODULE_DESC'] = "Модуль для голосования пользователей социальных сети.";
 
-$MESS['HTC_SOCIALLIKES_INSTALL_TITLE'] = "РЈСЃС‚Р°РЅРѕРІРєР° РјРѕРґСѓР»СЏ В«Р“РѕР»РѕСЃРѕРІР°РЅРёРµ С‡РµСЂРµР· СЃРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµС‚РёВ» (htc.sociallikes).";
-$MESS['HTC_SOCIALLIKES_UNINSTALL_TITLE'] = "РЈРґР°Р»РµРЅРёРµ РјРѕРґСѓР»СЏ В«Р“РѕР»РѕСЃРѕРІР°РЅРёРµ С‡РµСЂРµР· СЃРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµС‚РёВ» (htc.sociallikes).";
+$MESS['HTC_SOCIALLIKES_INSTALL_TITLE'] = "Установка модуля «Голосование через социальные сети» (htc.sociallikes).";
+$MESS['HTC_SOCIALLIKES_UNINSTALL_TITLE'] = "Удаление модуля «Голосование через социальные сети» (htc.sociallikes).";
 
-$MESS['HTC_SOCIALLIKES_INSTALL_COMPLETED'] = "Р—Р°РІРµСЂС€РµРЅР° СѓСЃС‚Р°РЅРѕРІРєР° РјРѕРґСѓР»СЏ В«Р“РѕР»РѕСЃРѕРІР°РЅРёРµ С‡РµСЂРµР· СЃРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµС‚РёВ» (htc.sociallikes).";
-$MESS['HTC_SOCIALLIKES_UNINSTALL_COMPLETED'] = "РњРѕРґСѓР»СЊ В«Р“РѕР»РѕСЃРѕРІР°РЅРёРµ С‡РµСЂРµР· СЃРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµС‚РёВ» (htc.sociallikes) СѓРґР°Р»РµРЅ РёР· СЃРёСЃС‚РµРјС‹.";
+$MESS['HTC_SOCIALLIKES_INSTALL_COMPLETED'] = "Завершена установка модуля «Голосование через социальные сети» (htc.sociallikes).";
+$MESS['HTC_SOCIALLIKES_UNINSTALL_COMPLETED'] = "Модуль «Голосование через социальные сети» (htc.sociallikes) удален из системы.";
 
-$MESS['HTC_ERROR_NOT_CONNECTED_MODULE_SOCIALSERVICES'] = "РћС€РёР±РєР°! Р¤СѓРЅРєС†РёРѕРЅР°Р» РјРѕРґСѓР»СЏ РѕСЃРЅРѕРІР°РЅР° РЅР° РјРѕРґСѓР»СЏС… В«РЎРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµСЂРІРёСЃС‹В» (socialservices) Рё В«Highload РРЅС„РѕР±Р»РѕРєРёВ» (highloadblock).<br /><br />
-                                                        1. РЈСЃС‚Р°РЅРѕРІРёС‚Рµ РјРѕРґСѓР»СЊ В«РЎРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµСЂРІРёСЃС‹В» (socialservices).<br />
-                                                        2. РЈСЃС‚Р°РЅРѕРІРёС‚Рµ РјРѕРґСѓР»СЊ В«Highload РРЅС„РѕР±Р»РѕРєРёВ» (highloadblock).<br />
-                                                        3. Р—Р°С‚РµРј СѓСЃС‚Р°РЅРѕРІРёС‚Рµ РјРѕРґСѓР»СЊ В«Р“РѕР»РѕСЃРѕРІР°РЅРёРµ С‡РµСЂРµР· СЃРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµС‚РёВ» (htc.sociallikes).";
-$MESS['HTC_ERROR_UNABLE_ADD_HIGHLOADBLOCK'] = 'РќРµ СѓРґР°Р»РѕСЃСЊ РґРѕР±Р°РІРёС‚СЊ highloadblock РґР»СЏ С…СЂР°РЅРµРЅРёСЏ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РіРѕР»РѕСЃРѕРІР°РЅРёСЏ';
+$MESS['HTC_ERROR_NOT_CONNECTED_MODULE_SOCIALSERVICES'] = "Ошибка! Функционал модуля основана на модулях «Социальные сервисы» (socialservices) и «Highload Инфоблоки» (highloadblock).<br /><br />
+                                                        1. Установите модуль «Социальные сервисы» (socialservices).<br />
+                                                        2. Установите модуль «Highload Инфоблоки» (highloadblock).<br />
+                                                        3. Затем установите модуль «Голосование через социальные сети» (htc.sociallikes).";
+$MESS['HTC_ERROR_UNABLE_ADD_HIGHLOADBLOCK'] = 'Не удалось добавить highloadblock для хранения результатов голосования';
 
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_ID'] = 'РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_ELEMENT_ID'] = 'РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СЌР»РµРјРµРЅС‚Р°';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_DATE'] = 'Р”Р°С‚Р° РіРѕР»РѕСЃРѕРІР°РЅРёСЏ';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_SOCIAL_NETWORK'] = 'РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СЃРѕС†. СЃРµС‚Рё';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_NAME'] = 'РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ';
-$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_WEB_USER_PAGE'] = 'Р’РµР±-СЃС‚СЂР°РЅРёС†Р° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_ID'] = 'Идентификатор пользователя';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_ELEMENT_ID'] = 'Идентификатор элемента';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_DATE'] = 'Дата голосования';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_SOCIAL_NETWORK'] = 'Идентификатор соц. сети';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_USER_NAME'] = 'Имя пользователя';
+$MESS['HTC_CUSTOM_FIELD_NAME_RU_UF_WEB_USER_PAGE'] = 'Веб-страница пользователя';
 
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_USER_ID'] = 'User ID';
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_USER_NAME'] = 'User name';
@@ -28,9 +28,9 @@ $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_ELEMENT_ID'] = 'Element ID';
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_DATE'] = 'Date of vote';
 $MESS['HTC_CUSTOM_FIELD_NAME_EN_UF_SOCIAL_NETWORK'] = 'Social network identifier';
 
-$MESS['HTC_UNINSTALL_SAVE_HLBLOCK'] = 'РЈРґР°Р»РёС‚СЊ Highload РёРЅС„РѕР±Р»РѕРєРё';
-$MESS['HTC_SAVE'] = 'РџСЂРёРјРµРЅРёС‚СЊ';
-$MESS['HTC_WARNING'] = 'Р’РЅРёРјР°РЅРёРµ! РњРѕРґСѓР»СЊ Р±СѓРґРµС‚ СѓРґР°Р»РµРЅ РёР· СЃРёСЃС‚РµРјС‹.';
+$MESS['HTC_UNINSTALL_SAVE_HLBLOCK'] = 'Удалить Highload инфоблоки';
+$MESS['HTC_SAVE'] = 'Применить';
+$MESS['HTC_WARNING'] = 'Внимание! Модуль будет удален из системы.';
 
-$MESS['HTC_SOCIALLIKES_PARTNER_NAME'] = "Р¦РµРЅС‚СЂ Р’С‹СЃРѕРєРёС… РўРµС…РЅРѕР»РѕРіРёР№";
+$MESS['HTC_SOCIALLIKES_PARTNER_NAME'] = "Центр Высоких Технологий";
 $MESS['HTC_SOCIALLIKES_PARTNER_URI'] = 'http://htc-cs.ru';

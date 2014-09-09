@@ -1,15 +1,15 @@
 <?
-$MESS['SOCSERV_AS_USER_NOTE'] = 'Р’С‹ РјРѕР¶РµС‚Рµ РїСЂРѕРіРѕР»РѕСЃРѕРІР°С‚СЊ, РµСЃР»Рё Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹ РЅР° РѕРґРЅРѕРј РёР· СЌС‚РёС… СЃРµСЂРІРёСЃРѕРІ:';
-$MESS['AUTH_LOGOUT_BUTTON'] = 'Р’С‹Р№С‚Рё';
-$MESS['USER_CAN_NOT_VOTE'] = 'Р’С‹ РїСЂРѕРіРѕР»РѕСЃРѕРІР°Р»Рё';
-$MESS['USER_CAN_VOTE'] = 'Р“РѕР»РѕСЃРѕРІР°С‚СЊ Р·Р° СЂР°Р±РѕС‚Сѓ';
+$MESS['SOCSERV_AS_USER_NOTE'] = 'Вы можете проголосовать, если зарегистрированы на одном из этих сервисов:';
+$MESS['AUTH_LOGOUT_BUTTON'] = 'Выйти';
+$MESS['USER_CAN_NOT_VOTE'] = 'Вы проголосовали';
+$MESS['USER_CAN_VOTE'] = 'Голосовать за работу';
 $MESS['METADATA'] = '<meta property="og:title" content="%s" />
                     <meta property="og:url" content="%s" />
                     <meta property="og:image" content="%s" />
                     <meta property="og:description" content="%s" />
                     <meta property="og:site_name" content="%s" />
                     <meta property="og:type" content="website" />';
-$MESS['YOUR_VOTE_COUNTED'] = 'Р’Р°С€ РіРѕР»РѕСЃ СѓС‡С‚РµРЅ';
-$MESS['SHARE_WITH_FRIENDS'] = 'РџРѕРґРµР»РёС‚СЊСЃСЏ СЃ РґСЂСѓР·СЊСЏРјРё?';
-$MESS['YES'] = 'Р”Р°';
-$MESS['NO'] = 'РќРµС‚';
+$MESS['YOUR_VOTE_COUNTED'] = 'Ваш голос учтен';
+$MESS['SHARE_WITH_FRIENDS'] = 'Поделиться с друзьями?';
+$MESS['YES'] = 'Да';
+$MESS['NO'] = 'Нет';

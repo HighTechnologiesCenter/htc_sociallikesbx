@@ -1,6 +1,6 @@
 <?php
-$MESS['ERROR_NOT_CONNECT_MODULE_IBLOCK'] = 'ÐžÑˆÐ¸Ð±ÐºÐ°. ÐÐµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½ Ð¼Ð¾Ð´ÑƒÐ»ÑŒ Â«Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¾Ð½Ð½Ñ‹Ðµ Ð±Ð»Ð¾ÐºÐ¸Â».';
-$MESS['ERROR_NOT_CONNECT_MODULE_SOCIALSERVICES'] = 'ÐžÑˆÐ¸Ð±ÐºÐ°. ÐÐµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½ Ð¼Ð¾Ð´ÑƒÐ»ÑŒ Â«Ð¡Ð¾Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ðµ ÑÐµÑ€Ð²Ð¸ÑÑ‹Â».';
-$MESS['ERROR_NOT_CONNECT_MODULE_SOCIALLIKES'] = 'ÐžÑˆÐ¸Ð±ÐºÐ°. ÐÐµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½ Ð¼Ð¾Ð´ÑƒÐ»ÑŒ Â«Ð“Ð¾Ð»Ð¾ÑÐ¾Ð²Ð°Ð½Ð¸Ðµ Ñ‡ÐµÑ€ÐµÐ· ÑÐ¾Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ðµ ÑÐµÑ‚Ð¸Â».';
-$MESS['ERROR_NOT_SPECIFIED_ITEM_IDENTIFIER'] = 'ÐžÑˆÐ¸Ð±ÐºÐ°. ÐÐµ Ð·Ð°Ð´Ð°Ð½ Ð¸Ð´ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°.';
-$MESS['ERROR_NOT_FOUND_HIGHLOAD_IBLOCK'] = 'ÐžÑˆÐ¸Ð±ÐºÐ°. ÐÐµ Ð½Ð°Ð¹Ð´ÐµÐ½ highload Ð¸Ð½Ñ„Ð¾Ð±Ð»Ð¾Ðº';
+$MESS['ERROR_NOT_CONNECT_MODULE_IBLOCK'] = 'Îøèáêà. Íå ïîäêëþ÷åí ìîäóëü «Èíôîðìàöèîííûå áëîêè».';
+$MESS['ERROR_NOT_CONNECT_MODULE_SOCIALSERVICES'] = 'Îøèáêà. Íå ïîäêëþ÷åí ìîäóëü «Ñîöèàëüíûå ñåðâèñû».';
+$MESS['ERROR_NOT_CONNECT_MODULE_SOCIALLIKES'] = 'Îøèáêà. Íå ïîäêëþ÷åí ìîäóëü «Ãîëîñîâàíèå ÷åðåç ñîöèàëüíûå ñåòè».';
+$MESS['ERROR_NOT_SPECIFIED_ITEM_IDENTIFIER'] = 'Îøèáêà. Íå çàäàí èäåíòèôèêàòîð ýëåìåíòà.';
+$MESS['ERROR_NOT_FOUND_HIGHLOAD_IBLOCK'] = 'Îøèáêà. Íå íàéäåí highload èíôîáëîê';

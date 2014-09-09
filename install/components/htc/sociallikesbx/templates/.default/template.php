@@ -1,51 +1,64 @@
-<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<?php if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 
-if(is_array($arResult["AUTH_SERVICES"]))
-{?>
+if(is_array($arResult['AUTH_SERVICES'])) {?>
     <div class="soc-buttons-cont"><?
-    if (!empty($arResult['USER']['NAME']))
-    {?>
-        <span class="soc-user-name"><?= sprintf('%s %s', $arResult['USER']['NAME'], $arResult['USER']['LAST_NAME'])?></span><?
-    }?>
-    <span class="soc-vote-title">
-			<? $APPLICATION->ShowViewContent('votingStatus'); ?>
-		</span>
-    <form name="bx_auth_services" action="<?= $arResult["CURRENT_URL"]?>" class="bx_auth_services" target="_top" method="post">
-        <input type="hidden" name="auth_service_id" value="" /><?php
+        /*
+        * Имя пользователя
+        */
+        if (! empty($arResult['USER']['NAME'])) {?>
+            <span class="soc-user-name"><?= $arResult['USER']['NAME'] . ' ' . $arResult['USER']['LAST_NAME']?></span><?
+        }?>
 
-        $isUserCanVote = true;
+        <form name="bx_auth_services" action="<?= $arResult['CURRENT_URL']?>" target="_top" method="post"class="bx_auth_services">
+            <input type="hidden" name="auth_service_id" value="" /><?php
 
-        foreach($arResult["AUTH_SERVICES"] as $service)
-        {
-            if(isset($service["FORM_HTML"]) && !empty($service["FORM_HTML"]))
-            {?>
-            <div id="bx_auth_serv_<?= $service["ID"]?>" class="<?= $service["ID"]?>-button soc-button">
-                <?= $service["FORM_HTML"]?>
-                <span class="vote_number"><?= $arResult['NUMBER_VOTES'][strtoupper($service['ID'])]?></span>
-                </div><?php
-            }
-            elseif(isset($service['USER_CAN_VOTE']))
-            {
-                if ($service['USER_CAN_VOTE'] == 'N' || ($service['USER_CAN_VOTE'] == 'Y' && $service['USER_SELECTED_ITEM'] == 'Y'))
-                {
+            $isUserCanVote = true;
+
+            foreach($arResult['AUTH_SERVICES'] as $service) {
+                $numberVotes = intval($arResult['NUMBER_VOTES'][strtoupper($service['ID'])]);
+                if(isset($service['FORM_HTML']) && ! empty($service['FORM_HTML'])) {
                     /**
-                     *	���� ������������ �� ����� ����������, ���� ��� ������������ �� ������� �������
+                     * Если пользователь не авторизован через $service выводим ссылку для авторизации в соц сети
+                     */?>
+                    <div id="bx_auth_serv_<?= $service['ID']?>" class="js-to-vote js-<?= strtolower($service['ID'])?> soc-<?= strtolower($service['ID'])?>-button soc-button">
+                        <?= $service['FORM_HTML']?>
+                        <span class="js-number-vote soc-number-vote"><?= $numberVotes?></span>
+                    </div><?php
+                }
+                elseif (isset($service['USER_CAN_VOTE'])) {
+                    /**
+                     * Если пользователь авторизован через $service выводим ссылку для шаринга
                      */
-                    $isUserCanVote = false;
-                }?>
+                    if ($service['USER_CAN_VOTE'] == 'N' || ($service['USER_CAN_VOTE'] == 'Y' && $service['IS_SELECTED_SOCIAL_NETWORK'] == 'Y')) {
+                        $isUserCanVote = false;
+                    }?>
 
-            <div id="js-<?= $service["ID"]?>-vote" class="<?= $service["ID"]?>-button soc-button <?= ($service['USER_CAN_VOTE'] == 'N') ? 'voted' : ''; ?>">
-                <span class="vote_number"><?= $arResult['NUMBER_VOTES'][strtoupper($service['ID'])]?></span>
-                </div><?php
-            }
-        }
+                    <a href="javascript:void(0)" onclick="toVote(); BX.util.popup('<?= $service['URL_FOR_SHARE']?>', 580, 400)" class="js-to-vote js-<?= strtolower($service['ID'])?> soc-<?= strtolower($service['ID'])?>-button soc-button <?= ($service['USER_CAN_VOTE'] == 'N') ? 'voted' : ''; ?>">
+                        <span class="js-number-vote soc-number-vote"><?= $numberVotes?></span>
+                    </a><?php
 
-        $this->SetViewTarget('votingStatus');?>
-        <span class="user_can_vote" style="<?= ($isUserCanVote) ? '' : 'display:none;'?>"><?= GetMessage('USER_CAN_VOTE')?></span>
-        <span class="user_can_not_vote" style="<?= ($isUserCanVote) ? 'display:none;' : ''?>"><?= GetMessage('USER_CAN_NOT_VOTE')?></span><?php
-        $this->EndViewTarget();?>
+                    $arResult['URL_FOR_SHARE'] = $service['URL_FOR_SHARE'];
+                }
+            }?>
 
-    </form>
+        </form><?
+        /**
+         * Сообщение о возможности / не возможности проголосовать за элемент
+         */ ?>
+        <span class="soc-vote-title">
+            <span class="js-user-can-vote <?= ($isUserCanVote) ? '' : 'soc-vote-title-hidden' ?>"><?= Loc::getMessage('USER_CAN_VOTE') ?></span>
+            <span class="js-user-can-not-vote <?= (! $isUserCanVote) ? '' : 'soc-vote-title-hidden' ?>"><?= GetMessage('USER_CAN_NOT_VOTE')?></span>
+        </span>
+    </div>
+    <div id="js-popup" class="soc-popup">
+        <div class="soc-popup-content">
+            <h2><?= Loc::getMessage('YOUR_VOTE_COUNTED') ?></h2>
+            <p><?= Loc::getMessage('SHARE_WITH_FRIENDS') ?></p>
+            <a href="javascript:void(0)" id="js-share" class="soc-button-popup"><?= Loc::getMessage('YES') ?></a>
+            <a href="javascript:void(0)" id="js-close-popup" class="soc-button-popup"><?= Loc::getMessage('NO') ?></a>
+        </div>
     </div><?php
-}?>
+}
 

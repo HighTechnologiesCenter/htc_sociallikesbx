@@ -1,84 +1,79 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?><?
+<?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true)die();?><?
 
-if(!CModule::IncludeModule("iblock"))
-{
+if(! CModule::IncludeModule('iblock') || ! CModule::IncludeModule('htc.sociallikes')) {
     return;
 }
+
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 
 $iblocksTypes = CIBlockParameters::GetIBlockTypes();
 
 $iblocks=array();
-$selectedResultDB = CIBlock::GetList(
+$selectedResultIblocksDB = CIBlock::GetList(
                         Array('SORT' => 'ASC'),
                         Array('TYPE' => $arCurrentValues['IBLOCK_TYPE'], 'ACTIVE' => 'Y')
                     );
-while($iblock = $selectedResultDB->Fetch())
-{
+while($iblock = $selectedResultIblocksDB->Fetch()) {
     $iblocks[ $iblock['ID'] ] = '[' . $iblock['ID'] . '] ' . $iblock['NAME'];
 }
 
-$socialNetworks = array(
-    'VKontakte' => GetMessage('VKONTAKTE'),
-    'Facebook' => GetMessage('FACEBOOK'),
-    'Odnoklassniki' => GetMessage('ODNOKLASSNIKI'),
-);
+$socialNetworks = \Htc\SocialLikes\Helper::getSocialNetworks();
 
 $arComponentParameters = array(
-    "PARAMETERS" => array(
-        "IBLOCK_TYPE" => array(
-            "PARENT" => "BASE",
-            "NAME" => GetMessage("IBLOCK_TYPE"),
-            "TYPE" => "LIST",
-            "VALUES" => $iblocksTypes,
-            "REFRESH" => "Y",
+    'PARAMETERS' => array(
+        'IBLOCK_TYPE' => array(
+            'PARENT' => 'BASE',
+            'NAME' => Loc::getMessage('IBLOCK_TYPE'),
+            'TYPE' => 'LIST',
+            'VALUES' => $iblocksTypes,
+            'REFRESH' => 'Y'
         ),
-        "IBLOCK_ID" => array(
-            "PARENT" => "BASE",
-            "NAME" => GetMessage("IBLOCK"),
-            "TYPE" => "LIST",
-            "VALUES" => $iblocks,
-            "REFRESH" => "Y",
+        'IBLOCK_ID' => array(
+            'PARENT' => 'BASE',
+            'NAME' => Loc::getMessage('IBLOCK'),
+            'TYPE' => 'LIST',
+            'VALUES' => $iblocks,
+            'REFRESH' => 'Y'
         ),
-        "ELEMENT_ID" => array(
-            "PARENT" => "BASE",
-            "NAME" => GetMessage("IBLOCK_ELEMENT_ID"),
-            "TYPE" => "STRING",
-            "DEFAULT" => '={$_REQUEST["ELEMENT_ID"]}',
+        'ELEMENT_ID' => array(
+            'PARENT' => 'BASE',
+            'NAME' => Loc::getMessage('IBLOCK_ELEMENT_ID'),
+            'TYPE' => 'STRING',
+            'DEFAULT' => '={$_REQUEST["ELEMENT_ID"]}'
         ),
-        "SOCIAL_NETWORKS" => array(
-            "PARENT" => "BASE",
-            "NAME" => GetMessage("SOCIAL_NETWORKS"),
-            "TYPE" => "LIST",
-            "MULTIPLE" => "Y",
-            "VALUES" => $socialNetworks,
+        'SOCIAL_NETWORKS' => array(
+            'PARENT' => 'BASE',
+            'NAME' => Loc::getMessage('SOCIAL_NETWORKS'),
+            'TYPE' => 'LIST',
+            'MULTIPLE' => 'Y',
+            'VALUES' => $socialNetworks
         ),
-
-        "ALLOWED_VOTE_FOR_MULTIPLE_ITEMS" => array(
-            "NAME" => GetMessage("ALLOWED_VOTE_FOR_MULTIPLE_ITEMS"),
-            "TYPE" => "CHECKBOX",
-            "DEFAULT" => "N",
+        'ALLOWED_VOTE_FOR_MULTIPLE_ITEMS' => array(
+            'NAME' => Loc::getMessage('ALLOWED_VOTE_FOR_MULTIPLE_ITEMS'),
+            'TYPE' => 'CHECKBOX',
+            'DEFAULT' => 'N'
         ),
-        "ALLOWED_CANCEL_VOTE_FOR_ELEMENT" => array(
-            "NAME" => GetMessage("ALLOWED_CANCEL_VOTE_FOR_ELEMENT"),
-            "TYPE" => "CHECKBOX",
-            "DEFAULT" => "N",
+        'ALLOWED_CANCEL_VOTE_FOR_ELEMENT' => array(
+            'NAME' => Loc::getMessage('ALLOWED_CANCEL_VOTE_FOR_ELEMENT'),
+            'TYPE' => 'CHECKBOX',
+            'DEFAULT' => 'N'
         ),
-        "LINK_TO_WALL_POST" => array(
-            "NAME" => GetMessage("LINK_TO_WALL_POST"),
-            "TYPE" => "TEXT",
+        'LINK_TO_WALL_POST' => array(
+            'NAME' => Loc::getMessage('LINK_TO_WALL_POST'),
+            'TYPE' => 'TEXT'
         ),
-        "LINK_NAME_TO_WALL_POST" => array(
-            "NAME" => GetMessage("LINK_NAME_TO_WALL_POST"),
-            "TYPE" => "TEXT",
+        'LINK_NAME_TO_WALL_POST' => array(
+            'NAME' => Loc::getMessage('LINK_NAME_TO_WALL_POST'),
+            'TYPE' => 'TEXT'
         ),
-        "MESSAGE_TO_WALL_POST" => array(
-            "NAME" => GetMessage("MESSAGE_TO_WALL_POST"),
-            "TYPE" => "TEXT",
+        'MESSAGE_TO_WALL_POST' => array(
+            'NAME' => Loc::getMessage('MESSAGE_TO_WALL_POST'),
+            'TYPE' => 'TEXT'
         ),
-        "PICTURE_URL_TO_WALL_POST" => array(
-            "NAME" => GetMessage("PICTURE_URL_TO_WALL_POST"),
-            "TYPE" => "TEXT",
+        'PICTURE_URL_TO_WALL_POST' => array(
+            'NAME' => Loc::getMessage('PICTURE_URL_TO_WALL_POST'),
+            'TYPE' => 'TEXT'
         )
-    ),
+    )
 );
-?>

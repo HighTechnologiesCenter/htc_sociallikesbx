@@ -1,12 +1,15 @@
 <?
-$MESS['SOCSERV_AS_USER_NOTE'] = '¬˚ ÏÓÊÂÚÂ ÔÓ„ÓÎÓÒÓ‚‡Ú¸, ÂÒÎË Á‡Â„ËÒÚËÓ‚‡Ì˚ Ì‡ Ó‰ÌÓÏ ËÁ ˝ÚËı ÒÂ‚ËÒÓ‚:';
-$MESS['AUTH_LOGOUT_BUTTON'] = '¬˚ÈÚË';
-$MESS['USER_CAN_NOT_VOTE'] = '¬˚ ÔÓ„ÓÎÓÒÓ‚‡ÎË';
-$MESS['USER_CAN_VOTE'] = '√ÓÎÓÒÓ‚‡Ú¸ Á‡ ‡·ÓÚÛ';
+$MESS['SOCSERV_AS_USER_NOTE'] = '–í—ã –º–æ–∂–µ—Ç–µ –ø—Ä–æ–≥–æ–ª–æ—Å–æ–≤–∞—Ç—å, –µ—Å–ª–∏ –∑–∞—Ä–µ–≥–∏—Å—Ç—Ä–∏—Ä–æ–≤–∞–Ω—ã –Ω–∞ –æ–¥–Ω–æ–º –∏–∑ —ç—Ç–∏—Ö —Å–µ—Ä–≤–∏—Å–æ–≤:';
+$MESS['AUTH_LOGOUT_BUTTON'] = '–í—ã–π—Ç–∏';
+$MESS['USER_CAN_NOT_VOTE'] = '–í—ã –ø—Ä–æ–≥–æ–ª–æ—Å–æ–≤–∞–ª–∏';
+$MESS['USER_CAN_VOTE'] = '–ì–æ–ª–æ—Å–æ–≤–∞—Ç—å –∑–∞ —Ä–∞–±–æ—Ç—É';
 $MESS['METADATA'] = '<meta property="og:title" content="%s" />
                     <meta property="og:url" content="%s" />
                     <meta property="og:image" content="%s" />
                     <meta property="og:description" content="%s" />
                     <meta property="og:site_name" content="%s" />
                     <meta property="og:type" content="website" />';
-?>
+$MESS['YOUR_VOTE_COUNTED'] = '–í–∞—à –≥–æ–ª–æ—Å —É—á—Ç–µ–Ω';
+$MESS['SHARE_WITH_FRIENDS'] = '–ü–æ–¥–µ–ª–∏—Ç—å—Å—è —Å –¥—Ä—É–∑—å—è–º–∏?';
+$MESS['YES'] = '–î–∞';
+$MESS['NO'] = '–ù–µ—Ç';
